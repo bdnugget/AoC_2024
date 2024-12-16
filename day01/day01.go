@@ -1,28 +1,19 @@
 package day01
 
 import (
-	"strings"
-	"strconv"
-	"slices"
 	"math"
+	"slices"
+	"strings"
 
 	"github.com/bdnugget/AoC_2024/utils"
 )
-
-func atoi(s string) int {
-	v, err := strconv.Atoi(s)
-	if err != nil {
-		panic(err)
-	}
-	return v
-}
 
 func getSortedCols(lines []string) (leftCol []int, rightCol []int) {
 	for _, line := range lines {
 		left, right, found := strings.Cut(line, "   ")
 		if found {
-			leftCol = append(leftCol, atoi(left))
-			rightCol = append(rightCol, atoi(right))
+			leftCol = append(leftCol, utils.MustAtoi(left))
+			rightCol = append(rightCol, utils.MustAtoi(right))
 		}
 	}
 	slices.Sort(leftCol)
