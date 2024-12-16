@@ -1,21 +1,13 @@
 package day01
 
 import (
-	"os"
 	"strings"
 	"strconv"
-	//"fmt"
 	"slices"
 	"math"
-)
 
-func InputLines(filename string) []string {
-	b, err := os.ReadFile(filename)
-	if err != nil {
-		panic(err)
-	}
-	return strings.Split(string(b), "\n")
-}
+	"github.com/bdnugget/AoC_2024/utils"
+)
 
 func atoi(s string) int {
 	v, err := strconv.Atoi(s)
@@ -40,7 +32,7 @@ func getSortedCols(lines []string) (leftCol []int, rightCol []int) {
 }
 
 func Part01() int {
-	lines := InputLines("./day01/input")
+	lines := utils.InputLines("./day01/input")
 	leftCol, rightCol := getSortedCols(lines)
 
 	var diffCols []int
@@ -57,7 +49,7 @@ func Part01() int {
 }
 
 func Part02() int {
-	lines := InputLines("./day01/input")
+	lines := utils.InputLines("./day01/input")
 	leftCol, rightCol := getSortedCols(lines)
 
 	freqsRightCol := make(map[int]int)

@@ -1,14 +1,7 @@
 package day02
 
 import (
-	/*
-	"os"
-	"strings"
-	"strconv"
-	"fmt"
-	"slices"
-	"math"
-	*/
+	"github.com/bdnugget/AoC_2024/utils"
 )
 
 func Part01() int {
